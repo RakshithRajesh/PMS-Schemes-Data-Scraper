@@ -4,14 +4,17 @@ import pandas as pd
 import time
 
 options = Options()
-options.binary_location = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-driver_path = "/usr/local/bin/chromedriver"
+options.binary_location = "path to browser"
+driver_path = "path to chromedriver"
 driver = webdriver.Chrome(options=options, executable_path=driver_path)
 driver.get("https://pmsbazaar.com/Home/Login")
 
 ### LOGIN PART ###
-username = driver.find_element_by_id("UserName").send_keys("9341695456")
-password = driver.find_element_by_id("Password").send_keys("PMS&Investor9#")
+USERNAME = ""
+PASSWORD = ""
+
+username = driver.find_element_by_id("UserName").send_keys(USERNAME)
+password = driver.find_element_by_id("Password").send_keys(PASSWORD)
 submit = driver.find_element_by_id("btnLogin").click()
 time.sleep(20)
 print("Logged in SuccessFully!!!")
